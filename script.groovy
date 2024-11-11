@@ -14,6 +14,7 @@ def owasp() {
 def sonaranalysis() {
         withSonarQubeEnv('SonarQube') {
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Petshop-App \
+                    -Dsonar.java.binaries=. \
                     -Dsonar.projectKey=Petshop-App '''
        }
 }
