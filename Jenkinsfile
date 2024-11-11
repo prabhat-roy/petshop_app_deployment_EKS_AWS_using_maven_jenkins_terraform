@@ -71,5 +71,12 @@ pipeline {
                 }
             }
         }
+        stage("Build war") {
+            steps {
+                script {
+                    gv_script.war()
+                }
+            }
+        }
     }
 }
