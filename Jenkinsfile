@@ -71,17 +71,52 @@ pipeline {
                 }
             }
         }
-        stage("Build war") {
-            steps {
-                script {
-                    gv_script.war()
-                }
-            }
-        }
         stage("Docker Image") {
             steps {
                 script {
                     gv_script.docker()
+                }
+            }
+        }
+        stage("Trivy Image Scan") {
+            steps {
+                script {
+                    gv_script.trivyimage()
+                }
+            }
+        }
+        stage("Grype Image Scan") {
+            steps {
+                script {
+                    gv_script.grype()
+                }
+            }
+        }
+        stage("Syft Image Scan") {
+            steps {
+                script {
+                    gv_script.syft()
+                }
+            }
+        }
+        stage("Docker Scout Image Scan") {
+            steps {
+                script {
+                    gv_script.dockerscout()
+                }
+            }
+        }
+        stage("AWS ECR login and push") {
+            steps {
+                script {
+                    gv_script.ecr()
+                }
+            }
+        }
+        stage("Kubernetes deployment using Helm") {
+            steps {
+                script {
+                    gv_script.deploy()
                 }
             }
         }
