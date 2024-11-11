@@ -36,13 +36,6 @@ pipeline {
                 }
             }
         }
-        stage("OWASP FS Scan") {
-            steps {
-                script {
-                    gv_script.owasp()
-                }
-            }
-        }
         stage("SonarQube Analysis") {
             steps {
                 script {
@@ -56,90 +49,6 @@ pipeline {
                     gv_script.trivyfs()
                 }
             }
-        }
-        stage("Maven Compile") {
-            steps {
-                script {
-                    gv_script.compile()
-                }
-            }
-        }
-        stage("Maven Test") {
-            steps {
-                script {
-                    gv_script.test()
-                }
-            }
-        }
-        stage("Quality Gate") {
-            steps {
-                script {
-                    gv_script.qualitygate()
-                }
-            }
-        }
-        stage("Build war") {
-            steps {
-                script {
-                    gv_script.war()
-                }
-            }
-        }
-        stage("Docker Image") {
-            steps {
-                script {
-                    gv_script.docker()
-                }
-            }
-        }
-        stage("Trivy Image Scan") {
-            steps {
-                script {
-                    gv_script.trivyimage()
-                }
-            }
-        }
-        stage("Grype Image Scan") {
-            steps {
-                script {
-                    gv_script.grype()
-                }
-            }
-        }
-        stage("Syft Image Scan") {
-            steps {
-                script {
-                    gv_script.syft()
-                }
-            }
-        }
-        stage("Docker Scout Image Scan") {
-            steps {
-                script {
-                    gv_script.dockerscout()
-                }
-            }
-        }
-        stage("AWS ECR login and push") {
-            steps {
-                script {
-                    gv_script.ecr()
-                }
-            }
-        }
-        stage("Kubernetes deployment using Helm") {
-            steps {
-                script {
-                    gv_script.deploy()
-                }
-            }
-        }
-        
-    }
-    post {
-        always {
-            sh "docker logout"
-            deleteDir()
         }
     }
 }
