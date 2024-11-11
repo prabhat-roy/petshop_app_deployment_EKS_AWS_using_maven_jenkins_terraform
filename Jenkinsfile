@@ -64,5 +64,19 @@ pipeline {
                 }
             }
         }
+        stage("SonarQube Analysis") {
+            steps {
+                script {
+                    gv_script.sonaranalysis()
+                }
+            }
+        }
+        stage("Quality Gate") {
+            steps {
+                script {
+                    gv_script.qualitygate()
+                }
+            }
+        }
     }
 }
