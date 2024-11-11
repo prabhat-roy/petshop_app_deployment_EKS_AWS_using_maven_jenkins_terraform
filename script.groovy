@@ -22,6 +22,11 @@ def sonaranalysis() {
 def qualitygate() {
         waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
 }
+
+def war() {
+        sh "mvn clean install -DskipTests=true"
+}
+
 def trivyfs() {
         sh "trivy fs ."
 }
