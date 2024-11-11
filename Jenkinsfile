@@ -71,10 +71,10 @@ pipeline {
                 }
             }
         }
-        stage("Build war") {
+        stage("Docker Image") {
             steps {
                 script {
-                    gv_script.war()
+                    gv_script.docker()
                 }
             }
         }
