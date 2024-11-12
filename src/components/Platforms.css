@@ -29,7 +29,7 @@ video{
 .plat:hover video{
     transform: scale(1.18);
     visibility: visible;
-    
+
 }
 .rww{
     display: flex;
@@ -48,5 +48,5 @@ video{
         width: 120px;
         height: 50px;
     }
-    
+
 }

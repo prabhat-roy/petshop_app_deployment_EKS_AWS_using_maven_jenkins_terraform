@@ -16,19 +16,19 @@ function App() {
    <div className="nnn">
           <Nav/>
         </div>
-     
+
       <div className="aaa">
-        
-  
+
+
   <div className='first'>
-    
+
           <NavBar/>
   </div>
-  
+
    <div className='second'>
-  
+
     <div className='stick'>
-      
+
      <Banner/>
     </div>
     <div className='lg'>
@@ -38,12 +38,12 @@ function App() {
             <h3>Action | Drama | Thriller | Drugs</h3>
             <button className='btn'>Subscribe to Watch</button>
             <button className='bb btn'>+</button>
-  
-  
-  
+
+
+
     </div>
     <div className='z'>
-            
+
       <Row title="Latest releases" fetchUrl={requests.fetchActionMovies} />
       <Row title="Free-Newly Added" fetchUrl={requests.fetchComedyMovies}/>
       <Row title="Disney Movies" fetchUrl={requests.fetchDocumentaries}/>
@@ -55,8 +55,8 @@ function App() {
       <Row title="Populer Movies" fetchUrl={requests.fetchDoc}/>
       <Footer/>
     </div>
-    
-    
+
+
    </div>
       </div>
    </div>
