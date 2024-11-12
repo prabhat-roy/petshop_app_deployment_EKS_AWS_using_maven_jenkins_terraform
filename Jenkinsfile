@@ -113,6 +113,13 @@ pipeline {
                 }
             }
         }
+        stage("Kubernetes manifast update") {
+            steps {
+                script {
+                    gv_script.update()
+                }
+            }
+        }
         stage("Kubernetes deployment") {
             steps {
                 script {

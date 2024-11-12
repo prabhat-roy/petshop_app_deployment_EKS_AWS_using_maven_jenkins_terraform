@@ -79,10 +79,11 @@ def ecr() {
                 docker push ${ECR}/${IMAGE_NAME}:${BUILD_NUMBER}
         '''
 }
-
+def update () {
+         sh 'sed -i "s/<TAG>/${BUILD_NUMBER}/" petshop-deployment.yaml'
+}
 def deploy() {
-        sh '''  cat petshop-deployment.yaml
-                sed -i "s/<TAG>/${BUILD_NUMBER}/" petshop-deployment.yaml
+        sh '''  
                 cat petshop-deployment.yaml
                
         '''
