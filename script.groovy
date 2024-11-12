@@ -84,10 +84,7 @@ def deploy() {
         sh '''  cat petshop-deployment.yaml
                 sed -i "s/<TAG>/${BUILD_NUMBER}/" petshop-deployment.yaml
                 cat petshop-deployment.yaml
-                kubectl get nodes
-                kubectl get pods
-                kubectl get ns
-                kubectl get svc
+               
         '''
 }
 
