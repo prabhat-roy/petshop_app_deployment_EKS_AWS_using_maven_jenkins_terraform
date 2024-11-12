@@ -81,7 +81,7 @@ def ecr() {
 }
 def update () {
          sh '''
-         sed -i 's+873330726955.dkr.ecr.us-east-1.amazonaws.com/petshop-image.*+873330726955.dkr.ecr.us-east-1.amazonaws.com/petshop-image:${BUILD_NUMBER}+g' petshop-deployment.yaml
+                sed -i 's+873330726955.dkr.ecr.us-east-1.amazonaws.com/petshop-image.*+873330726955.dkr.ecr.us-east-1.amazonaws.com/petshop-image:${BUILD_NUMBER}+g' petshop-deployment.yaml
          '''
 }
 def deploy() {
