@@ -1,6 +1,15 @@
 def gv_script
 pipeline {
-    agent any    
+    agent any
+    environment {
+         GITHUB_URL = "https://github.com/prabhat-roy/petshop_app_deployment_EKS_AWS_using_maven_jenkins_terraform.git"
+         BRANCH = "main"
+         SCANNER_HOME =tool "SonarQube"
+         IMAGE_NAME = "petshop-image"         
+         ACC_ID = "873330726955"
+         REGION = "us-east-1"
+         ECR = "${ACC_ID}.dkr.ecr.${REGION}.amazonaws.com"
+    }    
     stages {
         stage("Init") {
             steps {
