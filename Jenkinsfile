@@ -85,13 +85,6 @@ pipeline {
                 }
             }
         }
-        stage("Trivy Image Scan") {
-            steps {
-                script {
-                    gv_script.trivyimage()
-                }
-            }
-        }
         stage("Grype Image Scan") {
             steps {
                 script {
@@ -120,7 +113,7 @@ pipeline {
                 }
             }
         }
-        stage("Kubernetes deployment using Helm") {
+        stage("Kubernetes deployment") {
             steps {
                 script {
                     gv_script.deploy()
