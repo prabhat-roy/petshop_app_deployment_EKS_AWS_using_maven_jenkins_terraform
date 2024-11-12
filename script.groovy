@@ -81,11 +81,13 @@ def ecr() {
 }
 
 def deploy() {
-        sh '''  helm upgrade first-release --install petshop-helm-chart --set image.tag=$BUILD_NUMBER             
+        sh '''  cat petshop-deployment.yaml
+                sed -i "s/<TAG>/${BUILD_NUMBER}/" petshop-deployment.yaml
+                cat petshop-deployment.yaml
                 kubectl get nodes
-                kubectl get pods -A
+                kubectl get pods
                 kubectl get ns
-                kubectl get svc -A
+                kubectl get svc
         '''
 }
 
