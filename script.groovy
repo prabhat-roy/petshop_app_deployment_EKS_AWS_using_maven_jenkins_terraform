@@ -82,7 +82,7 @@ def ecr() {
 def update () {
          sh '''
                 cat petshop-deployment.yaml
-                sed -i 's|image: .*|image: "${BUILD_NUMBER}"|' petshop-deployment.yaml
+                 sh 'sed -i "s/TAG/${BUILD_NUMBER}/" petshop-deployment.yaml'
                 cat petshop-deployment.yaml
          '''
 }
