@@ -80,7 +80,7 @@ def ecr() {
         '''
 }
 def update () {
-         sh "sed -i 's/<TAG>/${BUILD_NUMBER}/' petshop-deployment.yaml"
+         sh "sed -i 's/<TAG>/${BUILD_NUMBER}+g' petshop-deployment.yaml"
 }
 def deploy() {
         sh '''  
