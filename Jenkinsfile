@@ -1,7 +1,6 @@
 def gv_script
 pipeline {
-    agent any
-    
+    agent any    
     stages {
         stage("Init") {
             steps {
@@ -9,8 +8,7 @@ pipeline {
                     gv_script = load"script.groovy"
                 }
             }
-        }
-        
+        }        
         stage("Checkout from Git Repo") {
             steps {
                 script {
@@ -19,19 +17,5 @@ pipeline {
             }
         }
         
-        stage("Kubernetes manifast update") {
-            steps {
-                script {
-                    gv_script.update()
-                }
-            }
-        }
-        stage("Kubernetes deployment") {
-            steps {
-                script {
-                    gv_script.deploy()
-                }
-            }
-        }
     }
 }
