@@ -82,7 +82,7 @@ def ecr() {
 def update () {
          
                 sh "cat d.yaml"
-                sh "sed -i 's/TAG/$BUILD_NUMBER/g' d.yaml"
+                sh "sed -i 's/TAG/$BUILD_NUMBER/' d.yaml"
                 sh "cat d.yaml"
       
 }
