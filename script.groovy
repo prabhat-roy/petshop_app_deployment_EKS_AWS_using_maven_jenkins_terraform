@@ -82,7 +82,7 @@ def ecr() {
 def update () {
          sh '''
                 cat petshop-deployment.yaml
-                sed -i "s/<TAG>/${BUILD_NUMBER}/g" petshop-deployment.yaml
+                sed -i s/TAG/$BUILD_NUMBER/g petshop-deployment.yaml
                 cat petshop-deployment.yaml
          '''
 }
