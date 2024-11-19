@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: petshop
+  name: petshop-deployment
+  replicas: 3
+  selector:
+    matchLabels:
+      app: petshop
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: petshop
+    spec:
+      containers:
+      - image: 873330726955.dkr.ecr.us-east-1.amazonaws.com/petshop-image:TAG
+        name: petshop
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+        resources: {}
+status: {}

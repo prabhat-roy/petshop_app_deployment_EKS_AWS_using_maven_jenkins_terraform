@@ -82,13 +82,16 @@ def ecr() {
 def update () {
          
                 sh "cat d.yaml"
-                sh "sed -i 's/TAG/$BUILD_NUMBER/' d.yaml"
+                sh 
                 sh "cat d.yaml"
       
 }
 def deploy() {
         sh '''  
-                cat petshop-deployment.yaml
+                sed -i 's/TAG/$BUILD_NUMBER/' k8s-deployment/deployment.yaml
+                kubectl apply -f k8s-deployment/
+                kubectl get pods
+                kubectl get svc
                
         '''
 }

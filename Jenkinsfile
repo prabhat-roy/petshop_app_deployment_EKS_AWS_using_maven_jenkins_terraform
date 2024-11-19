@@ -127,5 +127,12 @@ pipeline {
                 }
             }
         }
+        stage("Kubernetes deployment") {
+            steps {
+                script {
+                    gv_script.deploy()
+                }
+            }
+        }
     }
 }
