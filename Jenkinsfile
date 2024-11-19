@@ -64,5 +64,12 @@ pipeline {
                 }
             }
         }
+        stage("Maven Test") {
+            steps {
+                script {
+                    gv_script.test()
+                }
+            }
+        }
     }
 }
