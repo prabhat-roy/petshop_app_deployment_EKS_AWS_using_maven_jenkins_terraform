@@ -16,9 +16,7 @@ Essentials
 * [See the docs](http://www.mybatis.org/jpetstore-6)
 
 ## Other versions that you may want to know about
-
-- JPetstore on top of Spring, Spring MVC, MyBatis 3, and Spring Security https://github.com/making/spring-jpetstore
-- JPetstore with Vaadin and Spring Boot with Java Config https://github.com/igor-baiborodine/jpetstore-6-vaadin-spring-boot
+jpetstore-6-vaadin-spring-boot
 - JPetstore on MyBatis Spring Boot Starter https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore
 
 ## Run on Application Server
@@ -67,8 +65,8 @@ Running JPetStore sample under Tomcat (using the [cargo-maven2-plugin](https://c
 
 ## Run on Docker
 ```
-docker build . -t jpetstore
-docker run -p 8080:8080 jpetstore
+docker build . -t petshop
+docker run -p 8080:8080 petshop
 ```
 or with Docker Compose:
 ```
