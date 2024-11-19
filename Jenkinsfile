@@ -85,5 +85,12 @@ pipeline {
                 }
             }
         }
+        stage("Docker Image") {
+            steps {
+                script {
+                    gv_script.docker()
+                }
+            }
+        }
     }
 }
