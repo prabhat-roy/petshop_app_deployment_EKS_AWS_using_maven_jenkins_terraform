@@ -71,5 +71,12 @@ pipeline {
                 }
             }
         }
+        stage("Quality Gate") {
+            steps {
+                script {
+                    gv_script.qualitygate()
+                }
+            }
+        }
     }
 }
