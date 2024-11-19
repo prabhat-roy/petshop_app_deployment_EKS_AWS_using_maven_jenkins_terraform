@@ -12,6 +12,13 @@ pipeline {
                     gv_script = load"script.groovy"
                 }
             }
+        }
+        stage("Clean Workspace") {
+            steps {
+                script {
+                    gv_script.clean()
+                }
+            }
         }        
         stage("Checkout from Git Repo") {
             steps {
