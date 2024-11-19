@@ -78,5 +78,5 @@ Get the URL of the loadbalancer from the output and paste into the browser <URL>
 Perform integration tests for screen transition.
 
 ```
-$ ./mvnw clean verify -P tomcat90
+$ ./mvnw clean test
 ```
