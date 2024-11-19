@@ -89,6 +89,7 @@ def update () {
 def deploy() {
         sh '''  
                 sed -i 's/TAG/$BUILD_NUMBER/' k8s-deployment/deployment.yaml
+                cat k8s-deployment/deployment.yaml
                 kubectl apply -f k8s-deployment/
                 kubectl get pods
                 kubectl get svc
