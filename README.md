@@ -15,10 +15,6 @@ Essentials
 
 * [See the docs](http://www.mybatis.org/jpetstore-6)
 
-## Other versions that you may want to know about
-jpetstore-6-vaadin-spring-boot
-- JPetstore on MyBatis Spring Boot Starter https://github.com/kazuki43zoo/mybatis-spring-boot-jpetstore
-
 ## Run on Application Server
 Running JPetStore sample under Tomcat (using the [cargo-maven2-plugin](https://codehaus-cargo.github.io/cargo/Maven2+plugin.html)).
 

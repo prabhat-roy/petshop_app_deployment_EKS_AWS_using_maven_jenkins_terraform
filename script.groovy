@@ -32,6 +32,7 @@ def test() {
 }
 
 def integration() {
+        sh "chmod +x mvnw"
         sh "./mvnw clean test"
 }
 def qualitygate() {
