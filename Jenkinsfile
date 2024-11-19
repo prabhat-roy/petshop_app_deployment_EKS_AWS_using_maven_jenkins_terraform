@@ -50,5 +50,12 @@ pipeline {
                 }
             }
         }
+        stage("Trivy FS Scan") {
+            steps {
+                script {
+                    gv_script.trivyfs()
+                }
+            }
+        }
     }
 }
