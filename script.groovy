@@ -24,7 +24,7 @@ def qualitygate() {
 }
 
 def war() {
-        sh "mvn clean install -DskipTests=true"
+        sh "mvn clean package"
 }
 
 def trivyfs() {
