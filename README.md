@@ -73,6 +73,10 @@ or with Docker Compose:
 docker compose up -d
 ```
 
+## Output from kubernetes
+```
+Get the URL of the loadbalancer from the output and paste into the browser <URL>/jpetstore
+```
 ## Try integration tests
 
 Perform integration tests for screen transition.

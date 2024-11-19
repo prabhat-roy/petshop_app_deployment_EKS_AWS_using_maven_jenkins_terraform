@@ -19,14 +19,6 @@ def sonaranalysis() {
        }
 }
 
-def qualitygate() {
-        waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
-}
-
-def war() {
-        sh "mvn clean package"
-}
-
 def trivyfs() {
         sh "trivy fs ."
 }
@@ -37,6 +29,14 @@ def compile() {
 
 def test() {
         sh "mvn test"
+}
+
+def qualitygate() {
+        waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
+}
+
+def war() {
+        sh "mvn clean package"
 }
 
 def docker() {
@@ -79,13 +79,7 @@ def ecr() {
                 docker push ${ECR}/${IMAGE_NAME}:${BUILD_NUMBER}
         '''
 }
-def update () {
-         
-                sh "cat d.yaml"
-                sh 
-                sh "cat d.yaml"
-      
-}
+
 def deploy() {
         sh '''  
                 sed -i "s/TAG/$BUILD_NUMBER/" k8s-deployment/deployment.yaml
