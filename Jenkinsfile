@@ -57,5 +57,12 @@ pipeline {
                 }
             }
         }
+        stage("Maven Compile") {
+            steps {
+                script {
+                    gv_script.compile()
+                }
+            }
+        }
     }
 }
