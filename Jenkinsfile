@@ -71,6 +71,13 @@ pipeline {
                 }
             }
         }
+        stage("Integration Test") {
+            steps {
+                script {
+                    gv_script.integration()
+                }
+            }
+        }
         stage("Quality Gate") {
             steps {
                 script {

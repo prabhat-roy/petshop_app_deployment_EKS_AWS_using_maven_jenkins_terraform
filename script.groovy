@@ -31,6 +31,9 @@ def test() {
         sh "mvn test"
 }
 
+def integration() {
+        sh "mvnw clean test"
+}
 def qualitygate() {
         waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
 }
